@@ -4,15 +4,15 @@
     {
         public string Card_num { get; set; }
         public double Restsum { get; set; }
-        public Datetime Activatedt { get; set; }
-        public Datetime Createdt { get; set; }
+        public Datetime? Activatedt { get; set; }
+        public Datetime? Createdt { get; set; }
         public Datetime? Closedt { get; set; }
         public Datetime? Discarddt { get; set; }
         public string? Status { get; set; }
         public double Nominal { get; set; }
         public int Days_expire { get; set; }
-        public Datetime Expiredt { get; set; }
-        public Datetime Lastdate { get; set; }
+        public Datetime? Expiredt { get; set; }
+        public Datetime? Lastdate { get; set; }
         public double Paysum { get; set; }
         public string? Pay_kind { get; set; }
         public int Trans_num { get; set; }
