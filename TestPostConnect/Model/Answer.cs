@@ -15,10 +15,5 @@
             if (req.Method == "payment") Result = new AnswerResultPlayment(req);
         }
 
-        private void Payment(Request req)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

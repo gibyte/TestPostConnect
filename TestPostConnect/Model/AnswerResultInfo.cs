@@ -49,6 +49,9 @@
         private List<string> cards_num = new()
         {
             "01DC0050045E",
+            "01DC0100045E",
+            "01DC0200045E",
+            "01DC1000045E"
         };
     }
 }
