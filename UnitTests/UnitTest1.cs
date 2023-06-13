@@ -94,7 +94,7 @@ namespace TestPostConnect.UnitTests
                     Card_num = "01DC0050045E",
                     Opguid = "034B8166F54911ED9C9950AF73396779",
                     Opdate = new Model.Datetime() { __datetime = "20230518T095555"},
-                    Artcode = "77710000"
+                    Artcode = "77700500"
                 }
             };
             var ansver = new Model.Answer(req);
