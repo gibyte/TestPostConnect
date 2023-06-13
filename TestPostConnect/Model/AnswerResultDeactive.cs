@@ -6,7 +6,12 @@
         public AnswerResultDeactive(Request req)
         {
             Result = false;
-            Reason = "Текст ошибки";
+            if (req != null && req.Params != null && req.Params.Card_num != null
+                && req.Params.Wscode != null && req.Params.Artcode != null)
+            {
+                Result = IsWsCode(req.Params.Wscode) && IsCardNum(req.Params.Card_num) && IsArtCode(req.Params.Artcode);
+            }
+            Reason = Result ? "" : "Текст ошибки";
         }
     }
 }

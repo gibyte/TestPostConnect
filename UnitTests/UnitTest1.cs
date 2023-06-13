@@ -94,7 +94,7 @@ namespace TestPostConnect.UnitTests
                     Card_num = "01DC0050045E",
                     Opguid = "034B8166F54911ED9C9950AF73396779",
                     Opdate = new Model.Datetime() { __datetime = "20230518T095555"},
-                    Artcode = "1000263892"
+                    Artcode = "77710000"
                 }
             };
             var ansver = new Model.Answer(req);
@@ -107,6 +107,33 @@ namespace TestPostConnect.UnitTests
         }
 
         [Test]
+        public void ActivateNotCorrectGC()
+        {
+            var req = new Model.Request()
+            {
+                Version = "1.1",
+                Method = "activate",
+                Params = new Model.Params()
+                {
+                    User = "cashier",
+                    Password = "0",
+                    Wscode = "900001",
+                    Card_num = "01DC7750045E",
+                    Opguid = "034B8166F54911ED9C9950AF73396779",
+                    Opdate = new Model.Datetime() { __datetime = "20230518T095555" },
+                    Artcode = "1000263892"
+                }
+            };
+            var ansver = new Model.Answer(req);
+            if (ansver != null && ansver.Result != null)
+            {
+                Assert.IsFalse(ansver.Result.Result);
+                return;
+            }
+            Assert.Fail();
+        }
+
+            [Test]
         public void DeactivateGC()
         {
             var req = new Model.Request()

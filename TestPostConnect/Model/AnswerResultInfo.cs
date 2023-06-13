@@ -21,13 +21,12 @@
         {
             Result = false;
             Card_num = "";
-            if (req != null && req.Params != null && req.Params.Card_num != null)
+            if (req != null && req.Params != null && req.Params.Card_num != null && req.Params.Wscode != null)
             {
                 Card_num = req.Params.Card_num;
-                var searc_CN = cards_num.Find(x => x == req.Params.Card_num);
-                if (searc_CN != null) 
+                Result = IsWsCode(req.Params.Wscode) && IsCardNum(req.Params.Card_num);
+                if (Result) 
                 {
-                    Result = true;
                     Restsum = 500.0;
                     Activatedt = new Datetime() { __datetime = "20230303T105110" };
                     Createdt = new Datetime() { __datetime = "20211222T131309" };
@@ -45,13 +44,5 @@
                 }   
             }
         }
-
-        private List<string> cards_num = new()
-        {
-            "01DC0050045E",
-            "01DC0100045E",
-            "01DC0200045E",
-            "01DC1000045E"
-        };
     }
 }
