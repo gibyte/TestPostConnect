@@ -33,7 +33,7 @@ public class TestPost : ControllerBase
         //--
         var req = JsonConvert.DeserializeObject<TestPostConnect.Model.Request>(entireRequestBody);
         if (req == null) return "{\"error\":\"bad request\"}";
-        TestPostConnect.Model.Answer  ansver = new() { Result = true };
+        TestPostConnect.Model.Answer  ansver = new(req);
         return JsonConvert.SerializeObject(ansver);
     }
 }
